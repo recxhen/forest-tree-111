@@ -78,7 +78,7 @@
       "description": "支持專業潛水團隊清除水下漁網與廢棄物，保護海龜與鯨豚的生存空間。",
       "type": "link",
       "href": "https://example.com/donate/ocean",
-      "coverImage": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+      "coverImage": "https://images.unsplash.com/photo-1708864162641-c748729de0b3?q=80&w=1036&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "tags": ["donate"]
     },
     {
@@ -122,7 +122,7 @@
       "description": "遠端協助社群媒體、文案撰寫、活動設計，適合無法到場但想貢獻技能的朋友。",
       "type": "link",
       "href": "https://example.com/volunteer/remote",
-      "coverImage": "https://images.unsplash.com/photo-1432888622747-4eb9a8efbc07?auto=format&fit=crop&w=800&q=80",
+      "coverImage": "https://images.unsplash.com/photo-1762151662378-f40e20901824?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "tags": ["volunteer"]
     },
     {
@@ -183,7 +183,7 @@
       "description": "2010–2024 年間，動員超過 4 萬名志工，從台灣海岸與離島清除相當於 32 輛大卡車的廢棄物。",
       "type": "link",
       "href": "https://example.com/achievements/ocean-cleanup",
-      "coverImage": "https://images.unsplash.com/photo-1532996122724-e3c371b71f02?auto=format&fit=crop&w=800&q=80",
+      "coverImage": "https://unsplash.com/photos/a-plastic-bag-floating-on-top-of-a-body-of-water-gcLItQZgHYM",
       "tags": ["achievement"]
     },
     {

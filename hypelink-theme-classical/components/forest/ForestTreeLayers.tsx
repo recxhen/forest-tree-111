@@ -94,15 +94,6 @@ export default function ForestTreeLayers({
           <path d="M1140,600 L1235,90 L1330,600 Z" />
           <path d="M1380,600 L1460,260 L1540,600 Z" />
         </g>
-        {!isCorner ? (
-          <g fill="#788a6b" opacity="0.35">
-            <ellipse cx="720" cy="120" rx="280" ry="70" />
-          </g>
-        ) : (
-          <g fill="#788a6b" opacity="0.28">
-            <ellipse cx="1100" cy="140" rx="200" ry="55" />
-          </g>
-        )}
       </svg>
 
       {/* {groundClass ? (
