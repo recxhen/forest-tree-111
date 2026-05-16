@@ -6,6 +6,7 @@ import { isForestCornerSection } from '../lib/forest-corner-sections'
 import { parseLinkFolderSections } from '../lib/link-folder-sections'
 import type { ThemeFolderTabsSettings } from '../settings.schema'
 import type { FolderItem } from '../types'
+import CornerForest from './CornerForest'
 
 const FUNDRAISING_TITLES = ['珊瑚礁緊急募款', '珊瑚礁復育緊急募款', '山林復育行動基金', '海洋廢棄物行動計劃', '海洋廢棄物清除計畫']
 
@@ -14,21 +15,26 @@ function FundingBar({ item }: { item: FolderItem }) {
   const current = currentAmount ?? 75
   const target = targetAmount ?? 100
   const pct = Math.min(100, Math.round((current / target) * 100))
+  const fmt = (n: number) =>
+    n >= 10000 ? `${(n / 10000).toFixed(1).replace(/\.0$/, '')} 萬` : `${n.toLocaleString()}`
 
   return (
-    <div className="mt-1.5 flex items-center gap-2">
-      <div
-        className="relative h-[5px] flex-1 overflow-hidden rounded-full"
-        style={{ backgroundColor: '#1b2e24' }}
-      >
-        <div
-          className="hl-fund-bar-fill absolute inset-y-0 left-0 rounded-full"
-          style={{ width: `${pct}%`, backgroundColor: '#788a6b' }}
-        />
+    <div className="hl-fund-wrap mt-2 select-none">
+      <div className="mb-1 flex items-end justify-between">
+        <span className="flex items-center gap-1 text-[10px] font-semibold tracking-wide text-white/90">
+          <svg width="8" height="9" viewBox="0 0 8 9" fill="none" aria-hidden>
+            <path d="M4 8.5 C4 8.5 0.5 5.5 0.5 3 A3.5 3.5 0 0 1 7.5 3 C7.5 5.5 4 8.5 4 8.5Z" fill="#788a6b"/>
+            <path d="M4 4 C3 2.5 1.5 2 1 2.5" stroke="#9ab87a" strokeWidth="0.6" strokeLinecap="round"/>
+          </svg>
+          已達成 {pct}%
+        </span>
+        <span className="hl-fund-amount text-[9px] text-white/55">
+          {fmt(current)} / {fmt(target)}
+        </span>
       </div>
-      <span className="shrink-0 text-[10px] font-semibold text-white/80">
-        已達成 {pct}%
-      </span>
+      <div className="hl-fund-track">
+        <div className="hl-fund-fill" style={{ width: `${pct}%` }} />
+      </div>
     </div>
   )
 }
@@ -36,7 +42,6 @@ function FundingBar({ item }: { item: FolderItem }) {
 function isFundraisingItem(item: FolderItem) {
   return FUNDRAISING_TITLES.some((t) => item.title.includes(t))
 }
-import CornerForest from './CornerForest'
 
 function cx(...parts: (string | false | undefined)[]) {
   return parts.filter(Boolean).join(' ')
@@ -155,6 +160,8 @@ export default function FolderGrid({
 
             // ── 連結 ──
             const img = item.coverImage
+            const isFund = isFundraisingItem(item)
+            const overlayH = isFund ? 'h-[96px]' : 'h-[60px]'
             const inner = (
               <>
                 {img ? (
@@ -170,19 +177,21 @@ export default function FolderGrid({
                   </div>
                 )}
                 <div
-                  className="pointer-events-none absolute inset-x-0 bottom-0 h-[60px] bg-linear-to-t from-[#2f2f2f]/85 to-transparent"
+                  className={`pointer-events-none absolute inset-x-0 bottom-0 ${overlayH} bg-linear-to-t from-[#2f2f2f]/90 to-transparent`}
                   aria-hidden
                 />
                 <div className="absolute inset-x-0 bottom-0 px-4 pb-3 pt-8">
                   <p className="text-[13px] font-semibold leading-snug text-white">
                     {item.title}
                   </p>
-                  {isFundraisingItem(item) && <FundingBar item={item} />}
+                  {isFund && <FundingBar item={item} />}
                 </div>
               </>
             )
 
-            const cardClassName = `relative z-10 block h-[120px] w-full overflow-hidden border border-hl-border/90 bg-hl-parchment-shadow sm:h-[132px] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] ${radiusCls}`
+            const cardClassName = isFund
+              ? `relative z-10 block h-[176px] w-full overflow-hidden border border-hl-border/90 bg-hl-parchment-shadow sm:h-[192px] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] ${radiusCls}`
+              : `relative z-10 block h-[120px] w-full overflow-hidden border border-hl-border/90 bg-hl-parchment-shadow sm:h-[132px] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] ${radiusCls}`
 
             if (item.clickBehavior === 'expand-text' && item.expandHtml) {
               return (
