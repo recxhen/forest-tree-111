@@ -1,0 +1,217 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #faf6ee;
+  --color-brand-500: #2a2319;
+  --color-accent-500: #8b2942;
+  --color-hl-parchment: #f5efe4;
+  --color-hl-parchment-elevated: #fcf8ee;
+  --color-hl-parchment-shadow: #e8dfd0;
+  --color-hl-ink: #2a2319;
+  --color-hl-muted: #5e5648;
+  --color-hl-border: #c4b08a;
+  --color-hl-gold: #a67c00;
+  --color-hl-gold-soft: rgba(166, 124, 0, 0.14);
+  --radius-card: 12px;
+  --font-display: ui-serif, "Noto Serif TC", serif;
+  --color-forest-dark: #1b2e24;      /* 深邃的林蔭底色 */
+  --color-forest-moss: #3a533d;      /* 苔蘚綠（中景） */
+  --color-forest-sprout: #788a6b;    /* 嫩芽綠（前景/高光） */
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--color-hl-ink);
+  font-family: var(--font-noto-serif-tc), var(--font-display);
+  background-color: var(--color-hl-parchment);
+  background-image:
+    radial-gradient(ellipse 140% 70% at 50% -25%, rgba(166, 124, 0, 0.09), transparent 55%),
+    radial-gradient(ellipse 80% 50% at 100% 0%, rgba(139, 41, 66, 0.04), transparent 45%),
+    linear-gradient(180deg, #faf6ee 0%, #ebe4d4 55%, #e5dcc8 100%);
+  background-attachment: fixed;
+}
+
+/* 與主站 `globals.css` 一致：公開頁側欄進場淡入 */
+@keyframes hl-brand-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hl-brand-entry-fade {
+  animation: hl-brand-fade-in var(--hl-entry-dur, 0.65s) ease-out both;
+}
+
+/* ── Theme Loading Stages ── */
+
+/* Skeleton shimmer — 羊皮紙調 */
+@keyframes hl-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.hl-skeleton {
+  background: linear-gradient(
+    90deg,
+    #dfd5c4 22%,
+    #ebe4d4 48%,
+    #dfd5c4 78%
+  );
+  background-size: 200% 100%;
+  animation: hl-shimmer 1.5s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+/* Stage 1: Intro fade-in */
+@keyframes hl-intro-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.hl-stage-intro {
+  animation: hl-intro-in 0.5s ease-out both;
+}
+
+/* Stage 2: Loading pulse */
+@keyframes hl-loader-pulse {
+  0%, 100% { opacity: 0.6; }
+  50%      { opacity: 1; }
+}
+.hl-loader-pulse {
+  animation: hl-loader-pulse 1.6s ease-in-out infinite;
+}
+
+/* Loading progress bar */
+.hl-progress-bar {
+  transition: width 0.3s ease-out;
+}
+
+/* ── Stage 3：森林生長轉場（與 FOREST_DURATION / --hl-forest-duration 同步） ── */
+:root {
+  --hl-forest-duration: 3.8s;
+}
+
+/* 整場景：生長完畢後淡出，才露出 Stage 4 */
+@keyframes hl-forest-scene {
+  0% { opacity: 1; }
+  72% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.hl-forest-scene {
+  animation: hl-forest-scene var(--hl-forest-duration) ease-in-out both;
+}
+
+/* 天空由晨光轉為林蔭 */
+@keyframes hl-forest-sky {
+  0% {
+    opacity: 0;
+    background: linear-gradient(180deg, #faf6ee 0%, #d4e8d0 55%, #8faa8a 100%);
+  }
+  18% {
+    opacity: 1;
+    background: linear-gradient(180deg, #c8dcc8 0%, #5a7a62 45%, #2d4a38 100%);
+  }
+  72% {
+    opacity: 1;
+    background: linear-gradient(180deg, #9eb8a8 0%, #3a533d 40%, #1b2e24 100%);
+  }
+  100% {
+    opacity: 0;
+    background: linear-gradient(180deg, #b8cfc0 0%, #3a533d 50%, #1b2e24 100%);
+  }
+}
+.hl-forest-sky {
+  animation: hl-forest-sky var(--hl-forest-duration) ease-out both;
+}
+
+/* 遠景山丘 */
+@keyframes hl-forest-hills-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(40%);
+  }
+  22% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.hl-forest-hills {
+  transform-origin: bottom center;
+  animation: hl-forest-hills-rise var(--hl-forest-duration) ease-out both;
+}
+
+/* 樹木由根部向上長出 */
+@keyframes hl-tree-rise {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  55% {
+    transform: scaleY(1.04);
+    opacity: 1;
+  }
+  70% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 0;
+  }
+}
+.hl-tree-layer-1,
+.hl-tree-layer-2,
+.hl-tree-layer-3 {
+  transform-origin: bottom center;
+  will-change: transform, opacity;
+}
+.hl-tree-layer-3 {
+  animation: hl-tree-rise var(--hl-forest-duration) cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.15s;
+}
+.hl-tree-layer-2 {
+  animation: hl-tree-rise var(--hl-forest-duration) cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.35s;
+}
+.hl-tree-layer-1 {
+  animation: hl-tree-rise var(--hl-forest-duration) cubic-bezier(0.34, 1.2, 0.64, 1) both;
+  animation-delay: 0.55s;
+}
+
+/* 地面泥土層 */
+@keyframes hl-forest-ground-rise {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  20% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.hl-forest-ground {
+  transform-origin: bottom center;
+  background: linear-gradient(180deg, transparent 0%, #2a4236 35%, #1b2e24 100%);
+  animation: hl-forest-ground-rise var(--hl-forest-duration) ease-out both;
+}
+
+
+/* Stage 4: Content reveal */
+@keyframes hl-content-reveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hl-content-reveal {
+  animation: hl-content-reveal 0.5s ease-out both;
+}

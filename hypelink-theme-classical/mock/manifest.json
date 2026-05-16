@@ -1,0 +1,12 @@
+{
+  "description": "ThemeContext mock fixtures for local development (no API).",
+  "fixtures": [
+    { "id": "full", "file": "context.full.json", "note": "完整 profile／社群；連結區含「日記／專案／旅遊」三資料夾與連結卡；空間" },
+    { "id": "desktop-os", "file": "context.desktop-os.json", "note": "settings.desktopLayout.mode=os：macOS 風格桌面（桌布＋Dock＋視窗），lg 以上生效" },
+    { "id": "minimal", "file": "context.minimal.json", "note": "空列表 + 最少 settings" },
+    { "id": "grid-layout", "file": "context.grid-layout.json", "note": "layout=grid，多卡片" },
+    { "id": "split-layout", "file": "context.split-layout.json", "note": "layout=split" },
+    { "id": "example", "file": "../examples/example-context.json", "note": "沿用既有 example" },
+    { "id": "empty", "file": "../examples/empty-context.json", "note": "沿用既有 empty" }
+  ]
+}

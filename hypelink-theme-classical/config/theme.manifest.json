@@ -1,0 +1,19 @@
+{
+  "id": "hypelink-theme-classical",
+  "name": "HypeLink Classical",
+  "version": "1.0.0",
+  "author": "HypeLink",
+  "description": "古典風格品牌頁：襯線字型、羊皮紙質感、赭石與金色點綴，適合書齋、藝文與典藏品牌。",
+  "entry": "./app/theme-entry.tsx",
+  "previewImage": "./preview.png",
+  "capabilities": [
+    "profile",
+    "social-links",
+    "folder-items",
+    "space-links",
+    "theme-settings"
+  ],
+  "platform": {
+    "minVersion": "1.0.0"
+  }
+}

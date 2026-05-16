@@ -1,0 +1,62 @@
+{
+  "profile": {
+    "id": "mock_grid",
+    "slug": "grid-demo",
+    "name": "Grid 版面測試",
+    "headline": "settings.layout = grid",
+    "locale": "zh-TW",
+    "verified": true
+  },
+  "socialLinks": [
+    {
+      "id": "g1",
+      "type": "twitter",
+      "label": "X",
+      "url": "https://x.com",
+      "order": 1,
+      "isVisible": true
+    }
+  ],
+  "folderItems": [
+    {
+      "id": "g_f1",
+      "title": "卡片 A",
+      "type": "post",
+      "href": "https://example.com/a",
+      "coverImage": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80",
+      "tags": ["demo"]
+    },
+    {
+      "id": "g_f2",
+      "title": "卡片 B",
+      "type": "post",
+      "href": "https://example.com/b",
+      "coverImage": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
+      "tags": ["demo"]
+    },
+    {
+      "id": "g_f3",
+      "title": "卡片 C",
+      "type": "post",
+      "href": "https://example.com/c",
+      "coverImage": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
+      "tags": ["demo"]
+    },
+    {
+      "id": "g_f4",
+      "title": "卡片 D",
+      "type": "post",
+      "href": "https://example.com/d",
+      "coverImage": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+      "tags": ["demo"]
+    }
+  ],
+  "spaceLinks": [],
+  "settings": {
+    "layout": "grid",
+    "accentColor": "#0d9488",
+    "backgroundColor": "#f0fdfa",
+    "showBio": true,
+    "cardRadius": 12
+  }
+}

@@ -1,0 +1,329 @@
+{
+  "profile": {
+    "id": "mock_eco_org",
+    "slug": "taiwan-oasis-eco",
+    "name": "台灣綠洲環境協會",
+    "headline": "守護生態 · 永續台灣 · 為下一代而行動",
+    "avatarUrl": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=320&q=80",
+    "coverUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=70",
+    "bio": "我們是一群相信改變可能的人。自 2010 年起，台灣綠洲環境協會透過海岸淨化、山林復育、氣候倡議與環境教育，守護這片土地。每一分捐款、每一位志工，都是改變的力量。",
+    "description": "我們是一群相信改變可能的人。自 2010 年起，台灣綠洲環境協會透過海岸淨化、山林復育、氣候倡議與環境教育，守護這片土地。每一分捐款、每一位志工，都是改變的力量。",
+    "locale": "zh-TW",
+    "verified": true
+  },
+  "socialLinks": [
+    {
+      "id": "s1",
+      "type": "facebook",
+      "label": "Facebook",
+      "url": "https://facebook.com",
+      "order": 1,
+      "isVisible": true
+    },
+    {
+      "id": "s2",
+      "type": "instagram",
+      "label": "Instagram",
+      "url": "https://instagram.com",
+      "order": 2,
+      "isVisible": true
+    },
+    {
+      "id": "s3",
+      "type": "youtube",
+      "label": "YouTube",
+      "url": "https://youtube.com",
+      "order": 3,
+      "isVisible": true
+    },
+    {
+      "id": "s4",
+      "type": "twitter",
+      "label": "X / Twitter",
+      "url": "https://twitter.com",
+      "order": 4,
+      "isVisible": true
+    }
+  ],
+  "folderItems": [
+    {
+      "id": "fold-donate",
+      "title": "緊急募款",
+      "description": "支持我們守護台灣生態的關鍵行動",
+      "type": "folder",
+      "tags": ["mock-section"],
+      "childrenCount": 3
+    },
+    {
+      "id": "donate-1",
+      "title": "珊瑚礁復育緊急募款",
+      "description": "氣候暖化導致墾丁珊瑚白化危機，目標籌措 150 萬元投入降溫礁盤與人工育苗計畫。已達成 68%。",
+      "type": "link",
+      "href": "https://example.com/donate/coral",
+      "coverImage": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80",
+      "tags": ["donate"]
+    },
+    {
+      "id": "donate-2",
+      "title": "山林復育行動基金",
+      "description": "合歡山森林火災後，協助受損林地重新種植原生樹種，每 300 元可種植一棵台灣杉。",
+      "type": "link",
+      "href": "https://example.com/donate/forest",
+      "coverImage": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80",
+      "tags": ["donate"]
+    },
+    {
+      "id": "donate-3",
+      "title": "海洋廢棄物清除計畫",
+      "description": "支持專業潛水團隊清除水下漁網與廢棄物，保護海龜與鯨豚的生存空間。",
+      "type": "link",
+      "href": "https://example.com/donate/ocean",
+      "coverImage": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+      "tags": ["donate"]
+    },
+    {
+      "id": "fold-volunteer",
+      "title": "志工招募",
+      "description": "用你的時間與雙手，成為改變的一部分",
+      "type": "folder",
+      "tags": ["mock-section"],
+      "childrenCount": 4
+    },
+    {
+      "id": "vol-1",
+      "title": "週末海灘淨灘志工",
+      "description": "每月第一個週六，北海岸淡水到石門段。無需經驗，備好手套出發！名額 50 人。",
+      "type": "link",
+      "href": "https://example.com/volunteer/beach",
+      "coverImage": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=800&q=80",
+      "tags": ["volunteer"]
+    },
+    {
+      "id": "vol-2",
+      "title": "山徑生態調查員",
+      "description": "協助記錄台灣黑熊、石虎等珍稀物種的棲息狀況，需完成 8 小時培訓課程。",
+      "type": "link",
+      "href": "https://example.com/volunteer/wildlife",
+      "coverImage": "https://images.unsplash.com/photo-1474511320723-9a56873867b5?auto=format&fit=crop&w=800&q=80",
+      "tags": ["volunteer"]
+    },
+    {
+      "id": "vol-3",
+      "title": "校園環境教育講師",
+      "description": "帶著我們設計的教案走進偏鄉學校，點燃孩子對自然的熱情。備有完整教材支援。",
+      "type": "link",
+      "href": "https://example.com/volunteer/education",
+      "coverImage": "https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=800&q=80",
+      "tags": ["volunteer"]
+    },
+    {
+      "id": "vol-4",
+      "title": "線上行政與設計支援",
+      "description": "遠端協助社群媒體、文案撰寫、活動設計，適合無法到場但想貢獻技能的朋友。",
+      "type": "link",
+      "href": "https://example.com/volunteer/remote",
+      "coverImage": "https://images.unsplash.com/photo-1432888622747-4eb9a8efbc07?auto=format&fit=crop&w=800&q=80",
+      "tags": ["volunteer"]
+    },
+    {
+      "id": "fold-projects",
+      "title": "現行專案",
+      "description": "2024–2025 進行中的核心行動",
+      "type": "folder",
+      "tags": ["mock-section"],
+      "childrenCount": 4
+    },
+    {
+      "id": "proj-1",
+      "title": "零碳海岸計畫 Phase 2",
+      "description": "結合漁業署與地方漁會，建立 12 處無塑捕魚示範區，推動漁業永續轉型。預計 2025 Q3 完成。",
+      "type": "link",
+      "href": "https://example.com/projects/zero-carbon-coast",
+      "coverImage": "https://images.unsplash.com/photo-1468581264429-2548ef9eb732?auto=format&fit=crop&w=800&q=80",
+      "tags": ["project"]
+    },
+    {
+      "id": "proj-2",
+      "title": "社區太陽能微電網",
+      "description": "協助花蓮偏遠部落建置離網太陽能系統，已讓 3 個原住民部落脫離柴油發電機依賴。",
+      "type": "link",
+      "href": "https://example.com/projects/solar-microgrid",
+      "coverImage": "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=800&q=80",
+      "tags": ["project"]
+    },
+    {
+      "id": "proj-3",
+      "title": "河川汙染監測網絡",
+      "description": "在全台 48 條主要河川部署低成本水質感測器，即時監測重金屬與農藥濃度，資料公開透明。",
+      "type": "link",
+      "href": "https://example.com/projects/river-monitor",
+      "coverImage": "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=800&q=80",
+      "tags": ["project"]
+    },
+    {
+      "id": "proj-4",
+      "title": "2030 淨零倡議聯盟",
+      "description": "串聯 30+ 本土 NGO，推動《氣候變遷因應法》修法，要求企業強制揭露碳排放數據。",
+      "type": "link",
+      "href": "https://example.com/projects/net-zero-alliance",
+      "coverImage": "https://images.unsplash.com/photo-1578675284003-f69c55e0bc28?auto=format&fit=crop&w=800&q=80",
+      "tags": ["project"]
+    },
+    {
+      "id": "fold-achievements",
+      "title": "我們的成就",
+      "description": "每一項成果都是大家共同努力的結晶",
+      "type": "folder",
+      "tags": ["mock-section"],
+      "childrenCount": 4
+    },
+    {
+      "id": "ach-1",
+      "title": "清除 320 噸海洋廢棄物",
+      "description": "2010–2024 年間，動員超過 4 萬名志工，從台灣海岸與離島清除相當於 32 輛大卡車的廢棄物。",
+      "type": "link",
+      "href": "https://example.com/achievements/ocean-cleanup",
+      "coverImage": "https://images.unsplash.com/photo-1532996122724-e3c371b71f02?auto=format&fit=crop&w=800&q=80",
+      "tags": ["achievement"]
+    },
+    {
+      "id": "ach-2",
+      "title": "種植 18 萬棵原生樹木",
+      "description": "透過「一人一樹」計畫，在全台 23 縣市山林種植台灣杉、楓香等原生樹種，形成連續綠廊。",
+      "type": "link",
+      "href": "https://example.com/achievements/reforestation",
+      "coverImage": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80",
+      "tags": ["achievement"]
+    },
+    {
+      "id": "ach-3",
+      "title": "推動 3 項環保立法",
+      "description": "成功倡議《塑膠減量管理辦法》修正、《海岸保護法》擴大適用範圍，以及飲料業強制押金制度。",
+      "type": "link",
+      "href": "https://example.com/achievements/policy",
+      "coverImage": "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=800&q=80",
+      "tags": ["achievement"]
+    },
+    {
+      "id": "ach-4",
+      "title": "2023 聯合國環境署認可",
+      "description": "榮獲 UNEP 亞太區「社區行動卓越獎」，成為台灣首個獲此殊榮的本土環保 NGO。",
+      "type": "link",
+      "href": "https://example.com/achievements/unep-award",
+      "coverImage": "https://images.unsplash.com/photo-1567427018141-0584cfcbf1b8?auto=format&fit=crop&w=800&q=80",
+      "tags": ["achievement"]
+    },
+    {
+      "id": "fold-news",
+      "title": "最新消息",
+      "description": "近期動態與媒體報導",
+      "type": "folder",
+      "tags": ["mock-section"],
+      "childrenCount": 3
+    },
+    {
+      "id": "news-1",
+      "title": "【聲明】反對興建第四核電廠延役計畫",
+      "description": "2025.05 — 協會發表聯合聲明，呼籲政府優先投資再生能源而非延長老化核設施壽命。",
+      "type": "link",
+      "href": "https://example.com/news/nuclear-statement",
+      "coverImage": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80",
+      "tags": ["news"]
+    },
+    {
+      "id": "news-2",
+      "title": "【活動】2025 世界地球日大遊行",
+      "description": "2025.04.22 — 號召萬人上街，從台北凱達格蘭大道出發，訴求「停止化石燃料補貼」。",
+      "type": "link",
+      "href": "https://example.com/news/earth-day-march",
+      "coverImage": "https://images.unsplash.com/photo-1552799446-159ba9523315?auto=format&fit=crop&w=800&q=80",
+      "tags": ["news"]
+    },
+    {
+      "id": "news-3",
+      "title": "【報告】2024 台灣生態現況年度報告出爐",
+      "description": "最新調查顯示台灣沿海珊瑚覆蓋率回升 12%，但陸域生物多樣性指數仍持續下滑，警訊未解。",
+      "type": "link",
+      "href": "https://example.com/news/annual-report-2024",
+      "coverImage": "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=800&q=80",
+      "tags": ["news"]
+    },
+    {
+      "id": "fold-education",
+      "title": "環境教育資源",
+      "description": "免費教材、工作坊與線上課程",
+      "type": "folder",
+      "tags": ["mock-section"],
+      "childrenCount": 3
+    },
+    {
+      "id": "edu-1",
+      "title": "氣候變遷入門課程（免費）",
+      "description": "6 堂線上課程，從科學原理到在地行動，適合國高中生與一般民眾，附結業證書。",
+      "type": "link",
+      "href": "https://example.com/education/climate-course",
+      "coverImage": "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=800&q=80",
+      "tags": ["education"]
+    },
+    {
+      "id": "edu-2",
+      "title": "學校生態課教案下載",
+      "description": "針對國小至高中各年齡層設計的 40+ 套教案，涵蓋海洋、森林、濕地、氣候等主題，免費授權使用。",
+      "type": "link",
+      "href": "https://example.com/education/lesson-plans",
+      "coverImage": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80",
+      "tags": ["education"]
+    },
+    {
+      "id": "edu-3",
+      "title": "企業 ESG 工作坊",
+      "description": "為企業量身設計的半日 ESG 實作工作坊，幫助團隊從日常作業落實減碳行動，歡迎洽詢。",
+      "type": "link",
+      "href": "https://example.com/education/esg-workshop",
+      "coverImage": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80",
+      "tags": ["education"]
+    }
+  ],
+  "spaceLinks": [
+    {
+      "id": "sp1",
+      "name": "線上生態展覽館",
+      "href": "https://example.com/3d-gallery",
+      "previewImage": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80",
+      "kind": "3d-space"
+    },
+    {
+      "id": "sp2",
+      "name": "永續商品選物店",
+      "href": "https://example.com/eco-store",
+      "previewImage": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=900&q=80",
+      "kind": "virtual-store"
+    }
+  ],
+  "settings": {
+    "layout": "stack",
+    "accentColor": "#2d6a4f",
+    "backgroundColor": "#f0f7f2",
+    "showBio": true,
+    "cardRadius": 12,
+    "bottomBar": {
+      "background": "rgba(240,247,242,0.82)",
+      "borderColor": "rgba(45,106,79,0.35)",
+      "labelInactiveColor": "#5c7a6a",
+      "iconInactiveColor": "#5c7a6a",
+      "iconActiveBackground": "rgba(45,106,79,0.14)",
+      "heartFavoriteBorder": "#2d6a4f",
+      "heartFavoriteBg": "rgba(45,106,79,0.10)",
+      "heartFavoriteIcon": "#2d6a4f",
+      "heartDefaultBorder": "#a8c5b5"
+    },
+    "folderTabs": {
+      "barBackground": "rgba(240,247,242,0.92)",
+      "barBorderColor": "#a8c5b5",
+      "inactiveColor": "#5c7a6a",
+      "inactiveHoverColor": "#2d6a4f",
+      "activeTextColor": "#2d6a4f",
+      "activeIndicatorColor": "#2d6a4f"
+    }
+  }
+}
