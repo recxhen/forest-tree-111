@@ -77,6 +77,15 @@ body {
   animation: hl-intro-in 0.5s ease-out both;
 }
 
+/* Fundraising progress bar fill — mimics life-force breathing */
+@keyframes hl-sprout-breathe {
+  0%, 100% { opacity: 0.82; }
+  50%      { opacity: 1; }
+}
+.hl-fund-bar-fill {
+  animation: hl-sprout-breathe 2.4s ease-in-out infinite;
+}
+
 /* Stage 2: Loading pulse */
 @keyframes hl-loader-pulse {
   0%, 100% { opacity: 0.6; }

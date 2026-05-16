@@ -73,6 +73,12 @@ export type FolderItem = {
   clickBehavior?: 'external' | 'embed' | 'expand-text'
   /** clickBehavior="expand-text" 時的 HTML 內容（平台 sanitize 後注入） */
   expandHtml?: string
+  /** 募款進度等擴充資料 */
+  metadata?: {
+    currentAmount?: number
+    targetAmount?: number
+    [key: string]: unknown
+  }
 }
 
 export type SpaceLink = {

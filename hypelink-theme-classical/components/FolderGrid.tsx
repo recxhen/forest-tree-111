@@ -6,6 +6,36 @@ import { isForestCornerSection } from '../lib/forest-corner-sections'
 import { parseLinkFolderSections } from '../lib/link-folder-sections'
 import type { ThemeFolderTabsSettings } from '../settings.schema'
 import type { FolderItem } from '../types'
+
+const FUNDRAISING_TITLES = ['珊瑚礁緊急募款', '珊瑚礁復育緊急募款', '山林復育行動基金', '海洋廢棄物行動計劃', '海洋廢棄物清除計畫']
+
+function FundingBar({ item }: { item: FolderItem }) {
+  const { currentAmount, targetAmount } = item.metadata ?? {}
+  const current = currentAmount ?? 75
+  const target = targetAmount ?? 100
+  const pct = Math.min(100, Math.round((current / target) * 100))
+
+  return (
+    <div className="mt-1.5 flex items-center gap-2">
+      <div
+        className="relative h-[5px] flex-1 overflow-hidden rounded-full"
+        style={{ backgroundColor: '#1b2e24' }}
+      >
+        <div
+          className="hl-fund-bar-fill absolute inset-y-0 left-0 rounded-full"
+          style={{ width: `${pct}%`, backgroundColor: '#788a6b' }}
+        />
+      </div>
+      <span className="shrink-0 text-[10px] font-semibold text-white/80">
+        已達成 {pct}%
+      </span>
+    </div>
+  )
+}
+
+function isFundraisingItem(item: FolderItem) {
+  return FUNDRAISING_TITLES.some((t) => item.title.includes(t))
+}
 import CornerForest from './CornerForest'
 
 function cx(...parts: (string | false | undefined)[]) {
@@ -135,18 +165,19 @@ export default function FolderGrid({
                     className="h-full w-full object-cover"
                   />
                 ) : (
-                  <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#dcd3c2] to-[#c9bba8] text-xs text-hl-muted">
+                  <div className="flex h-full w-full items-center justify-center bg-linear-to-br from-[#dcd3c2] to-[#c9bba8] text-xs text-hl-muted">
                     無預覽圖
                   </div>
                 )}
                 <div
-                  className="pointer-events-none absolute inset-x-0 bottom-0 h-[60px] bg-gradient-to-t from-[#2f2f2f]/85 to-transparent"
+                  className="pointer-events-none absolute inset-x-0 bottom-0 h-[60px] bg-linear-to-t from-[#2f2f2f]/85 to-transparent"
                   aria-hidden
                 />
                 <div className="absolute inset-x-0 bottom-0 px-4 pb-3 pt-8">
                   <p className="text-[13px] font-semibold leading-snug text-white">
                     {item.title}
                   </p>
+                  {isFundraisingItem(item) && <FundingBar item={item} />}
                 </div>
               </>
             )
