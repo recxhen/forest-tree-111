@@ -94,6 +94,7 @@ body {
 /* ── Stage 3：森林生長轉場（與 FOREST_DURATION / --hl-forest-duration 同步） ── */
 :root {
   --hl-forest-duration: 3.8s;
+  --hl-corner-forest-duration: 2.4s;
 }
 
 /* 整場景：生長完畢後淡出，才露出 Stage 4 */
@@ -206,6 +207,91 @@ body {
   animation: hl-forest-ground-rise var(--hl-forest-duration) ease-out both;
 }
 
+/* ── 右下角森林（分頁進入後生長，完成後永久停留；圖層在連結卡片之下） ── */
+.hl-corner-forest {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes hl-corner-tree-rise {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scaleY(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+.hl-corner-tree-layer-1,
+.hl-corner-tree-layer-2,
+.hl-corner-tree-layer-3 {
+  transform-origin: bottom right;
+  will-change: transform, opacity;
+}
+
+.hl-corner-tree-layer-3 {
+  animation: hl-corner-tree-rise var(--hl-corner-forest-duration)
+    cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.12s;
+}
+
+.hl-corner-tree-layer-2 {
+  animation: hl-corner-tree-rise var(--hl-corner-forest-duration)
+    cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.28s;
+}
+
+.hl-corner-tree-layer-1 {
+  animation: hl-corner-tree-rise var(--hl-corner-forest-duration)
+    cubic-bezier(0.34, 1.15, 0.64, 1) both;
+  animation-delay: 0.44s;
+}
+
+@keyframes hl-corner-soil-rise {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  25% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+.hl-corner-forest-soil {
+  transform-origin: bottom right;
+  background: linear-gradient(180deg, transparent 0%, #2a4236 40%, #1b2e24 100%);
+  animation: hl-corner-soil-rise var(--hl-corner-forest-duration) ease-out both;
+}
+
+.hl-corner-forest-ground {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(42, 66, 54, 0.15) 40%,
+    rgba(27, 46, 36, 0.35) 100%
+  );
+  opacity: 0;
+  animation: hl-corner-ground-fade var(--hl-corner-forest-duration) ease-out both;
+  animation-delay: 0.5s;
+}
+
+@keyframes hl-corner-ground-fade {
+  0% { opacity: 0; }
+  40% { opacity: 1; }
+  100% { opacity: 1; }
+}
 
 /* Stage 4: Content reveal */
 @keyframes hl-content-reveal {

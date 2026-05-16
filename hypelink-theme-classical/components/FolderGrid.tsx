@@ -2,9 +2,11 @@
 
 import { useState, type CSSProperties } from 'react'
 
+import { isForestCornerSection } from '../lib/forest-corner-sections'
 import { parseLinkFolderSections } from '../lib/link-folder-sections'
 import type { ThemeFolderTabsSettings } from '../settings.schema'
 import type { FolderItem } from '../types'
+import CornerForest from './CornerForest'
 
 function cx(...parts: (string | false | undefined)[]) {
   return parts.filter(Boolean).join(' ')
@@ -38,6 +40,7 @@ export default function FolderGrid({
 
   const activeText = folderTabs.activeTextColor ?? primary
   const activeLine = folderTabs.activeIndicatorColor ?? primary
+  const showCornerForest = isForestCornerSection(active.title)
 
   const barStyle: CSSProperties = {
     borderBottomColor: folderTabs.barBorderColor,
@@ -52,6 +55,9 @@ export default function FolderGrid({
 
   return (
     <>
+      {showCornerForest ? <CornerForest key={active.id} /> : null}
+
+      <div className="relative z-10">
       <div
         className="flex w-full flex-wrap justify-center border-b backdrop-blur-sm"
         style={barStyle}
@@ -145,7 +151,7 @@ export default function FolderGrid({
               </>
             )
 
-            const cardClassName = `relative block h-[120px] w-full overflow-hidden border border-hl-border/90 bg-hl-parchment-shadow sm:h-[132px] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] ${radiusCls}`
+            const cardClassName = `relative z-10 block h-[120px] w-full overflow-hidden border border-hl-border/90 bg-hl-parchment-shadow sm:h-[132px] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] ${radiusCls}`
 
             if (item.clickBehavior === 'expand-text' && item.expandHtml) {
               return (
@@ -181,6 +187,7 @@ export default function FolderGrid({
           })}
         </div>
       </div>
+      </div>
     </>
   )
 }
@@ -202,7 +209,7 @@ function ExpandTextCard({
 }) {
   const [open, setOpen] = useState(false)
   return (
-    <div className="block w-full">
+    <div className="relative z-10 block w-full">
       <button
         type="button"
         aria-expanded={open}
