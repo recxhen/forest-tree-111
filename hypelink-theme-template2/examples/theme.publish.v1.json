@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "1.0",
+  "package": {
+    "id": "editorial-grid",
+    "name": "Editorial Grid",
+    "version": "1.0.0",
+    "author": "獨立工作室（範例）",
+    "description": "A clean editorial-style HypeLink theme built with Next.js and Tailwind CSS.",
+    "entry": "./app/theme-entry.tsx",
+    "previewImage": "./preview.png",
+    "capabilities": [
+      "profile",
+      "social-links",
+      "folder-items",
+      "space-links",
+      "theme-settings"
+    ],
+    "platform": {
+      "minVersion": "1.0.0"
+    }
+  },
+  "meta": {
+    "category": "brand",
+    "tags": ["editorial", "clean", "modern"],
+    "supportsDarkMode": true,
+    "supportsMobilePreview": true,
+    "recommendedFor": ["creator", "brand", "studio"]
+  },
+  "motion": {
+    "screen": { "tabTransition": "fade", "durationMs": 260 },
+    "enter": { "preset": "fade_in", "speed": 1 },
+    "exit": { "preset": "fade_out", "speed": 1 },
+    "continuous": {
+      "preset": "none",
+      "targetElement": "avatar",
+      "speed": 1,
+      "intensity": 0
+    }
+  },
+  "defaultSettings": {
+    "layout": "grid",
+    "accentColor": "#ec4899",
+    "backgroundColor": "#ffffff",
+    "showBio": true,
+    "cardRadius": 16,
+    "bottomBar": {
+      "visibility": "always",
+      "background": "rgba(255, 245, 248, 0.55)",
+      "borderColor": "rgba(255, 255, 255, 0.65)",
+      "backdropBlurPx": 18,
+      "labelInactiveColor": "#9ca3af",
+      "iconActiveBackground": "#fdf2f8",
+      "switchCheckedBackground": "#ec4899"
+    },
+    "folderTabs": {
+      "barBackground": "rgba(255, 255, 255, 0.85)",
+      "barBorderColor": "#fce7f3",
+      "barBackdropBlurPx": 10,
+      "inactiveColor": "#9ca3af",
+      "inactiveHoverColor": "#831843",
+      "activeTextColor": "#db2777",
+      "activeIndicatorColor": "#ec4899"
+    }
+  },
+  "assets": {
+    "kind": "hypelink-theme-v1",
+    "entryModule": "app/theme-entry.js",
+    "note": "將整個 dist/ 目錄上傳至 R2 路徑（例：themes/artifacts/{packageId}/{version}/）；管理後台填寫對應公開 URL 為 artifact 根目錄。"
+  }
+}

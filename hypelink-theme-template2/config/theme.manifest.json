@@ -1,0 +1,19 @@
+{
+  "id": "hypelink-theme-template",
+  "name": "HypeLink Theme Template",
+  "version": "1.0.0",
+  "author": "HypeLink",
+  "description": "HypeLink 官方主題範本，包含完整的品牌頁佈局與元件，適合作為自訂主題的起點。",
+  "entry": "./app/theme-entry.tsx",
+  "previewImage": "./preview.png",
+  "capabilities": [
+    "profile",
+    "social-links",
+    "folder-items",
+    "space-links",
+    "theme-settings"
+  ],
+  "platform": {
+    "minVersion": "1.0.0"
+  }
+}

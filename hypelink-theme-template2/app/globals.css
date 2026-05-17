@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #f9fafb;
+  --color-brand-500: #111827;
+  --color-accent-500: #ec4899;
+  --radius-card: 18px;
+  --font-display: "Inter", sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--color-brand-50);
+  color: var(--color-brand-500);
+  font-family: var(--font-noto-tc), var(--font-display);
+}
+
+/* 與主站 `globals.css` 一致：公開頁側欄進場淡入 */
+@keyframes hl-brand-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hl-brand-entry-fade {
+  animation: hl-brand-fade-in var(--hl-entry-dur, 0.65s) ease-out both;
+}
+
+/* ── Theme Loading Stages ── */
+
+/* Skeleton shimmer */
+@keyframes hl-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.hl-skeleton {
+  background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
+  background-size: 200% 100%;
+  animation: hl-shimmer 1.5s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+/* Stage 1: Intro fade-in */
+@keyframes hl-intro-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.hl-stage-intro {
+  animation: hl-intro-in 0.5s ease-out both;
+}
+
+/* Stage 2: Loading pulse */
+@keyframes hl-loader-pulse {
+  0%, 100% { opacity: 0.6; }
+  50%      { opacity: 1; }
+}
+.hl-loader-pulse {
+  animation: hl-loader-pulse 1.6s ease-in-out infinite;
+}
+
+/* Loading progress bar */
+.hl-progress-bar {
+  transition: width 0.3s ease-out;
+}
+
+/* Stage 3: Transition wipe */
+@keyframes hl-wipe-in {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+@keyframes hl-wipe-out {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-100%); }
+}
+.hl-wipe-enter {
+  animation: hl-wipe-in 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.hl-wipe-exit {
+  animation: hl-wipe-out 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* Stage 4: Content reveal */
+@keyframes hl-content-reveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hl-content-reveal {
+  animation: hl-content-reveal 0.5s ease-out both;
+}

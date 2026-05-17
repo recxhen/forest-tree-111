@@ -1,0 +1,31 @@
+{
+  "name": "@hypelink/theme-template",
+  "version": "1.0.0",
+  "description": "HypeLink 品牌頁主題範本 — 複製此專案即可開始製作自訂主題",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "node scripts/write-theme-publish.mjs && next build && node scripts/copy-publish-to-out.mjs && node scripts/fix-asset-paths.mjs",
+    "build:esm": "HYPELINK_THEME_VERSION=v2 node scripts/write-theme-publish.mjs && vite build && node scripts/copy-publish-to-esm.mjs",
+    "build:hypelink-public": "HYPELINK_THEME_STATIC_BASE_PATH=/hypelink-theme-template/out pnpm run build",
+    "write-publish": "node scripts/write-theme-publish.mjs",
+    "dist:publish": "node scripts/write-theme-publish.mjs"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
+    "@tailwindcss/vite": "^4.0.0",
+    "lucide-react": "^0.544.0",
+    "next": "^16.0.0",
+    "postcss": "^8.4.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "25.8.0",
+    "@types/react": "19.2.14",
+    "typescript": "6.0.3",
+    "vite": "^6.0.0"
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "profile": {
+    "id": "user_001",
+    "slug": "hypelink-demo",
+    "name": "HypeLink Demo Brand",
+    "headline": "Interactive brand hub for creators and studios",
+    "avatarUrl": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=300&q=80",
+    "coverUrl": "https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1200&q=70",
+    "bio": "HypeLink helps brands connect content, spaces, links, and audience interactions in one flexible digital hub.",
+    "description": "與 mock/context.full.json 相同的多資料夾分區結構，供主題預覽測分頁列與連結卡。",
+    "locale": "zh-TW",
+    "verified": true
+  },
+  "socialLinks": [
+    {
+      "id": "social_1",
+      "type": "instagram",
+      "label": "Instagram",
+      "url": "https://instagram.com",
+      "order": 1,
+      "isVisible": true
+    },
+    {
+      "id": "social_2",
+      "type": "threads",
+      "label": "Threads",
+      "url": "https://threads.net",
+      "order": 2,
+      "isVisible": true
+    }
+  ],
+  "folderItems": [
+    {
+      "id": "fold-diary",
+      "title": "日記",
+      "description": "生活紀錄與隨筆",
+      "type": "folder",
+      "tags": ["mock-section"],
+      "childrenCount": 3
+    },
+    {
+      "id": "diary-1",
+      "title": "本週小記",
+      "description": "工作與日常",
+      "type": "link",
+      "href": "https://example.com/diary/week",
+      "coverImage": "https://images.unsplash.com/photo-1517842645767-c167b52f4009?auto=format&fit=crop&w=800&q=80",
+      "tags": ["diary"]
+    },
+    {
+      "id": "diary-2",
+      "title": "閱讀清單",
+      "type": "link",
+      "href": "https://example.com/diary/reading",
+      "coverImage": "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=800&q=80",
+      "tags": ["diary"]
+    },
+    {
+      "id": "diary-3",
+      "title": "心情筆記",
+      "type": "link",
+      "href": "https://example.com/diary/mood",
+      "coverImage": "https://images.unsplash.com/photo-1493612276216-ee3925529211?auto=format&fit=crop&w=800&q=80",
+      "tags": ["diary"]
+    },
+    {
+      "id": "fold-project",
+      "title": "專案",
+      "description": "進行中與已釋出作品",
+      "type": "folder",
+      "tags": ["mock-section"],
+      "childrenCount": 4
+    },
+    {
+      "id": "proj-1",
+      "title": "品牌改版計畫",
+      "type": "link",
+      "href": "https://example.com/project/rebrand",
+      "coverImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+      "tags": ["project"]
+    },
+    {
+      "id": "proj-2",
+      "title": "設計系統文件",
+      "type": "link",
+      "href": "https://example.com/project/design-system",
+      "coverImage": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=800&q=80",
+      "tags": ["project"]
+    },
+    {
+      "id": "proj-3",
+      "title": "API 整合看板",
+      "type": "link",
+      "href": "https://example.com/project/api-board",
+      "coverImage": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80",
+      "tags": ["project"]
+    },
+    {
+      "id": "proj-4",
+      "title": "上線檢核表",
+      "type": "link",
+      "href": "https://example.com/project/launch-checklist",
+      "coverImage": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+      "tags": ["project"]
+    },
+    {
+      "id": "fold-travel",
+      "title": "旅遊",
+      "description": "行程與回憶",
+      "type": "folder",
+      "tags": ["mock-section"],
+      "childrenCount": 3
+    },
+    {
+      "id": "tr-1",
+      "title": "京都五天四夜",
+      "type": "link",
+      "href": "https://example.com/travel/kyoto",
+      "coverImage": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80",
+      "tags": ["travel"]
+    },
+    {
+      "id": "tr-2",
+      "title": "沖繩自駕地圖",
+      "type": "link",
+      "href": "https://example.com/travel/okinawa",
+      "coverImage": "https://images.unsplash.com/photo-1549692520-acc6669e2f0c?auto=format&fit=crop&w=800&q=80",
+      "tags": ["travel"]
+    },
+    {
+      "id": "tr-3",
+      "title": "歐洲火車通票攻略",
+      "type": "link",
+      "href": "https://example.com/travel/eurail",
+      "coverImage": "https://images.unsplash.com/photo-1474487548417-781cb714cbcc?auto=format&fit=crop&w=800&q=80",
+      "tags": ["travel"]
+    }
+  ],
+  "spaceLinks": [
+    {
+      "id": "space_1",
+      "name": "Virtual Store",
+      "href": "https://example.com/store",
+      "previewImage": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=80",
+      "kind": "virtual-store"
+    },
+    {
+      "id": "space_2",
+      "name": "3D Gallery",
+      "href": "https://example.com/gallery",
+      "previewImage": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=900&q=80",
+      "kind": "3d-space"
+    }
+  ],
+  "settings": {
+    "layout": "stack",
+    "accentColor": "#ec4899",
+    "backgroundColor": "#f9fafb",
+    "showBio": true,
+    "cardRadius": 18,
+    "folderTabs": {
+      "barBackground": "rgba(255,255,255,0.85)",
+      "barBorderColor": "#fce7f3",
+      "barBackdropBlurPx": 10,
+      "inactiveColor": "#9ca3af",
+      "inactiveHoverColor": "#831843",
+      "activeTextColor": "#db2777",
+      "activeIndicatorColor": "#ec4899"
+    }
+  }
+}

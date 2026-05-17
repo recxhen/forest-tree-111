@@ -1,0 +1,46 @@
+{
+  "profile": {
+    "id": "mock_split",
+    "slug": "split-demo",
+    "name": "Split 版面",
+    "headline": "settings.layout = split",
+    "avatarUrl": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80",
+    "locale": "zh-TW",
+    "verified": false
+  },
+  "socialLinks": [
+    {
+      "id": "sp_s1",
+      "type": "globe",
+      "label": "官網",
+      "url": "https://example.com",
+      "order": 1,
+      "isVisible": true
+    }
+  ],
+  "folderItems": [
+    {
+      "id": "sp_f1",
+      "title": "主要連結",
+      "type": "link",
+      "href": "https://example.com",
+      "coverImage": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
+      "tags": ["main"]
+    }
+  ],
+  "spaceLinks": [
+    {
+      "id": "sp_sp1",
+      "name": "Gallery",
+      "href": "https://example.com/g",
+      "kind": "gallery"
+    }
+  ],
+  "settings": {
+    "layout": "split",
+    "accentColor": "#ea580c",
+    "backgroundColor": "#fff7ed",
+    "showBio": true,
+    "cardRadius": 20
+  }
+}

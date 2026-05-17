@@ -39,13 +39,6 @@ export type UserProfile = {
   description?: string
   locale: string
   verified: boolean
-  metadata?: {
-    impactStats?: Array<{
-      icon: string
-      label: string
-      value: string
-    }>
-  }
 }
 
 export type SocialLink = {
@@ -80,25 +73,6 @@ export type FolderItem = {
   clickBehavior?: 'external' | 'embed' | 'expand-text'
   /** clickBehavior="expand-text" 時的 HTML 內容（平台 sanitize 後注入） */
   expandHtml?: string
-  /**
-   * 擴充資料（平台可注入）。
-   * - 分頁資料夾：`sectionLayout: "stats"`、`forestCorner: true`
-   * - 連結卡片：`cardLayout: "fundraising"`；募款進度 `currentAmount` / `targetAmount`
-   * - 成就統計：`statValue`、`statUnit`、`statLabel`、`statIcon`
-   * 亦可改用 tags：`section-stats`、`forest-corner`、`fundraising`
-   */
-  metadata?: {
-    sectionLayout?: 'stats' | 'default'
-    forestCorner?: boolean
-    cardLayout?: 'fundraising' | 'link'
-    currentAmount?: number
-    targetAmount?: number
-    statValue?: number
-    statUnit?: string
-    statLabel?: string
-    statIcon?: string
-    [key: string]: unknown
-  }
 }
 
 export type SpaceLink = {

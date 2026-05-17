@@ -1,3 +1,8 @@
+import {
+  resolveForestCorner,
+  resolveSectionLayout,
+  type SectionLayout,
+} from './folder-item-layout'
 import type { FolderItem } from '../types'
 
 /** 由 `folderItems` 解析出的「連結分頁」：無 `href` 的 `folder` 為分頁標題，其後連結歸該分頁 */
@@ -6,6 +11,39 @@ export type LinkFolderSection = {
   title: string
   description?: string
   items: FolderItem[]
+  /** 分頁版面（來自分頁資料夾 metadata / tags） */
+  sectionLayout: SectionLayout
+  /** 是否顯示右下角森林裝飾 */
+  forestCorner: boolean
+}
+
+function sectionFromHeader(
+  item: FolderItem,
+  sectionIndex: number,
+  sectionItems: FolderItem[] = [],
+): LinkFolderSection {
+  return {
+    id: item.id,
+    title: item.title,
+    description: item.description,
+    items: sectionItems,
+    sectionLayout: resolveSectionLayout(item, sectionIndex, sectionItems),
+    forestCorner: resolveForestCorner(item, sectionIndex),
+  }
+}
+
+function implicitSection(
+  id: string,
+  title: string,
+  items: FolderItem[],
+): LinkFolderSection {
+  return {
+    id,
+    title,
+    items,
+    sectionLayout: 'default',
+    forestCorner: false,
+  }
 }
 
 const isSectionHeader = (i: FolderItem) => i.type === 'folder' && !i.href
@@ -21,11 +59,11 @@ export function parseLinkFolderSections(items: FolderItem[]): LinkFolderSection[
 
   if (!items.some(isSectionHeader)) {
     return [
-      {
-        id: '_all',
-        title: '連結',
-        items: items.filter((i) => !isSectionHeader(i)),
-      },
+      implicitSection(
+        '_all',
+        '連結',
+        items.filter((i) => !isSectionHeader(i)),
+      ),
     ]
   }
 
@@ -35,11 +73,7 @@ export function parseLinkFolderSections(items: FolderItem[]): LinkFolderSection[
   for (const item of items) {
     if (isSectionHeader(item)) {
       if (leading.length) {
-        sections.push({
-          id: '_implicit',
-          title: '連結',
-          items: leading,
-        })
+        sections.push(implicitSection('_implicit', '連結', leading))
         leading = []
       }
       sections.push({
@@ -47,6 +81,8 @@ export function parseLinkFolderSections(items: FolderItem[]): LinkFolderSection[
         title: item.title,
         description: item.description,
         items: [],
+        sectionLayout: 'default',
+        forestCorner: false,
       })
     } else {
       if (!sections.length) leading.push(item)
@@ -55,12 +91,16 @@ export function parseLinkFolderSections(items: FolderItem[]): LinkFolderSection[
   }
 
   if (leading.length) {
-    sections.unshift({
-      id: '_implicit',
-      title: '連結',
-      items: leading,
-    })
+    sections.unshift(implicitSection('_implicit', '連結', leading))
   }
 
-  return sections
+  let headerIndex = 0
+  return sections.map((sec) => {
+    if (sec.id === '_implicit' || sec.id === '_all') return sec
+    const header = items.find((i) => i.id === sec.id && isSectionHeader(i))
+    if (!header) return sec
+    const enriched = sectionFromHeader(header, headerIndex, sec.items)
+    headerIndex += 1
+    return enriched
+  })
 }
