@@ -1,0 +1,25 @@
+{
+  "layout": "grid",
+  "accentColor": "#ec4899",
+  "backgroundColor": "#ffffff",
+  "showBio": true,
+  "cardRadius": 16,
+  "bottomBar": {
+    "visibility": "always",
+    "background": "rgba(255, 245, 248, 0.55)",
+    "borderColor": "rgba(255, 255, 255, 0.65)",
+    "backdropBlurPx": 18,
+    "labelInactiveColor": "#9ca3af",
+    "iconActiveBackground": "#fdf2f8",
+    "switchCheckedBackground": "#ec4899"
+  },
+  "folderTabs": {
+    "barBackground": "rgba(255, 255, 255, 0.85)",
+    "barBorderColor": "#fce7f3",
+    "barBackdropBlurPx": 10,
+    "inactiveColor": "#9ca3af",
+    "inactiveHoverColor": "#831843",
+    "activeTextColor": "#db2777",
+    "activeIndicatorColor": "#ec4899"
+  }
+}

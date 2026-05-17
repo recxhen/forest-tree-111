@@ -1,0 +1,16 @@
+{
+  "profile": {
+    "id": "mock_user_min",
+    "slug": "min",
+    "name": "最小資料",
+    "locale": "en",
+    "verified": false
+  },
+  "socialLinks": [],
+  "folderItems": [],
+  "spaceLinks": [],
+  "settings": {
+    "layout": "stack",
+    "showBio": false
+  }
+}

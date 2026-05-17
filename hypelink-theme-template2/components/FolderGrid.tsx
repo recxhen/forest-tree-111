@@ -2,41 +2,9 @@
 
 import { useState, type CSSProperties } from 'react'
 
-import { resolveCardLayout } from '../lib/folder-item-layout'
 import { parseLinkFolderSections } from '../lib/link-folder-sections'
 import type { ThemeFolderTabsSettings } from '../settings.schema'
 import type { FolderItem } from '../types'
-import AchievementStatCards from './AchievementStatCards'
-import CornerForest from './CornerForest'
-
-function FundingBar({ item }: { item: FolderItem }) {
-  const { currentAmount, targetAmount } = item.metadata ?? {}
-  const current = currentAmount ?? 75
-  const target = targetAmount ?? 100
-  const pct = Math.min(100, Math.round((current / target) * 100))
-  const fmt = (n: number) =>
-    n >= 10000 ? `${(n / 10000).toFixed(1).replace(/\.0$/, '')} 萬` : `${n.toLocaleString()}`
-
-  return (
-    <div className="hl-fund-wrap mt-2 select-none">
-      <div className="mb-1 flex items-end justify-between">
-        <span className="flex items-center gap-1 text-[10px] font-semibold tracking-wide text-white/90">
-          <svg width="8" height="9" viewBox="0 0 8 9" fill="none" aria-hidden>
-            <path d="M4 8.5 C4 8.5 0.5 5.5 0.5 3 A3.5 3.5 0 0 1 7.5 3 C7.5 5.5 4 8.5 4 8.5Z" fill="#788a6b"/>
-            <path d="M4 4 C3 2.5 1.5 2 1 2.5" stroke="#9ab87a" strokeWidth="0.6" strokeLinecap="round"/>
-          </svg>
-          已達成 {pct}%
-        </span>
-        <span className="hl-fund-amount text-[9px] text-white/55">
-          {fmt(current)} / {fmt(target)}
-        </span>
-      </div>
-      <div className="hl-fund-track">
-        <div className="hl-fund-fill" style={{ width: `${pct}%` }} />
-      </div>
-    </div>
-  )
-}
 
 function cx(...parts: (string | false | undefined)[]) {
   return parts.filter(Boolean).join(' ')
@@ -70,8 +38,6 @@ export default function FolderGrid({
 
   const activeText = folderTabs.activeTextColor ?? primary
   const activeLine = folderTabs.activeIndicatorColor ?? primary
-  const showStatsLayout = active.sectionLayout === 'stats'
-  const showCornerForest = active.forestCorner
 
   const barStyle: CSSProperties = {
     borderBottomColor: folderTabs.barBorderColor,
@@ -86,9 +52,6 @@ export default function FolderGrid({
 
   return (
     <>
-      {showCornerForest ? <CornerForest key={active.id} /> : null}
-
-      <div className="relative z-10">
       <div
         className="flex w-full flex-wrap justify-center border-b backdrop-blur-sm"
         style={barStyle}
@@ -128,17 +91,7 @@ export default function FolderGrid({
         </div>
       </div>
 
-      {showStatsLayout ? (
-        <div className="mx-auto w-full max-w-5xl px-4 pb-2 pt-4 lg:px-10 lg:pt-6">
-          <AchievementStatCards
-            items={active.items.filter((i) => i.type !== 'page-module')}
-            radiusCls={radiusCls}
-            spaceGap={spaceGap}
-          />
-        </div>
-      ) : null}
-
-      {!showStatsLayout ? (
+      {/* 統一 grid：模組與連結混合排列 */}
       <div
         className="mx-auto w-full max-w-5xl px-4 pb-2 pt-4 lg:px-10 lg:pt-6"
       >
@@ -157,8 +110,8 @@ export default function FolderGrid({
                 >
                   {item.moduleSlot
                     ? <>{item.moduleSlot as React.ReactNode}</>
-                    : <div className={`border border-hl-border bg-hl-parchment-elevated px-4 py-3 shadow-sm ${radiusCls}`}>
-                        <p className="text-[13px] font-semibold text-hl-ink">{item.title}</p>
+                    : <div className={`px-4 py-3 border border-[#e5e7eb] bg-white ${radiusCls}`}>
+                        <p className="text-[13px] font-semibold text-[#18181b]">{item.title}</p>
                       </div>}
                 </div>
               )
@@ -166,8 +119,6 @@ export default function FolderGrid({
 
             // ── 連結 ──
             const img = item.coverImage
-            const isFund = resolveCardLayout(item) === 'fundraising'
-            const overlayH = isFund ? 'h-[96px]' : 'h-[60px]'
             const inner = (
               <>
                 {img ? (
@@ -178,26 +129,23 @@ export default function FolderGrid({
                     className="h-full w-full object-cover"
                   />
                 ) : (
-                  <div className="flex h-full w-full items-center justify-center bg-linear-to-br from-[#dcd3c2] to-[#c9bba8] text-xs text-hl-muted">
+                  <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#e8e8e8] to-[#d4d4d4] text-xs text-[#9ca3af]">
                     無預覽圖
                   </div>
                 )}
                 <div
-                  className={`pointer-events-none absolute inset-x-0 bottom-0 ${overlayH} bg-linear-to-t from-[#2f2f2f]/90 to-transparent`}
+                  className="pointer-events-none absolute inset-x-0 bottom-0 h-[60px] bg-gradient-to-t from-[#2f2f2f]/85 to-transparent"
                   aria-hidden
                 />
                 <div className="absolute inset-x-0 bottom-0 px-4 pb-3 pt-8">
                   <p className="text-[13px] font-semibold leading-snug text-white">
                     {item.title}
                   </p>
-                  {isFund && <FundingBar item={item} />}
                 </div>
               </>
             )
 
-            const cardClassName = isFund
-              ? `relative z-10 block h-[176px] w-full overflow-hidden border border-hl-border/90 bg-hl-parchment-shadow sm:h-[192px] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] ${radiusCls}`
-              : `relative z-10 block h-[120px] w-full overflow-hidden border border-hl-border/90 bg-hl-parchment-shadow sm:h-[132px] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] ${radiusCls}`
+            const cardClassName = `relative block h-[120px] w-full overflow-hidden border border-black/[0.06] bg-[#f0f0f0] sm:h-[132px] ${radiusCls}`
 
             if (item.clickBehavior === 'expand-text' && item.expandHtml) {
               return (
@@ -233,8 +181,6 @@ export default function FolderGrid({
           })}
         </div>
       </div>
-      ) : null}
-      </div>
     </>
   )
 }
@@ -256,7 +202,7 @@ function ExpandTextCard({
 }) {
   const [open, setOpen] = useState(false)
   return (
-    <div className="relative z-10 block w-full">
+    <div className="block w-full">
       <button
         type="button"
         aria-expanded={open}
@@ -264,13 +210,13 @@ function ExpandTextCard({
         className={cardClassName}
       >
         {inner}
-        <span className="absolute right-3 top-3 rounded-full border border-hl-border bg-hl-parchment-elevated/95 px-2 py-0.5 text-[10px] font-bold text-hl-gold shadow-sm">
+        <span className="absolute right-3 top-3 rounded-full bg-white/90 px-2 py-0.5 text-[10px] font-bold text-[#5b21b6]">
           {open ? '收起 ▴' : '展開 ▾'}
         </span>
       </button>
       {open && item.expandHtml ? (
         <div
-          className={`mt-2 border border-hl-border bg-hl-parchment-elevated p-4 text-[13px] leading-relaxed text-hl-muted shadow-sm ${radiusCls}`}
+          className={`mt-2 bg-white p-4 text-[13px] leading-relaxed text-[#374151] shadow-sm ${radiusCls}`}
           dangerouslySetInnerHTML={{ __html: item.expandHtml }}
         />
       ) : null}

@@ -1,0 +1,13 @@
+{
+  "profile": {
+    "id": "user_empty",
+    "slug": "empty-brand",
+    "name": "Empty Brand",
+    "locale": "zh-TW",
+    "verified": false
+  },
+  "socialLinks": [],
+  "folderItems": [],
+  "spaceLinks": [],
+  "settings": {}
+}

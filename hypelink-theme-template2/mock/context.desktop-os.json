@@ -1,0 +1,266 @@
+{
+  "profile": {
+    "id": "mock_user_full",
+    "slug": "stellar-records",
+    "name": "STELLAR Records",
+    "headline": "K-Pop Label & Artist Management",
+    "avatarUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=320&q=80",
+    "coverUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=70",
+    "bio": "STELLAR Records — 以音樂連結世界的 K-Pop 廠牌。新專輯、演唱會、幕後花絮，一切都在這裡。",
+    "description": "STELLAR Records — 以音樂連結世界的 K-Pop 廠牌。新專輯、演唱會、幕後花絮，一切都在這裡。",
+    "locale": "zh-TW",
+    "verified": true
+  },
+  "socialLinks": [
+    {
+      "id": "s1",
+      "type": "instagram",
+      "label": "Instagram",
+      "url": "https://instagram.com",
+      "order": 1,
+      "isVisible": true
+    },
+    {
+      "id": "s2",
+      "type": "youtube",
+      "label": "YouTube",
+      "url": "https://youtube.com",
+      "order": 2,
+      "isVisible": true
+    },
+    {
+      "id": "s3",
+      "type": "tiktok",
+      "label": "TikTok",
+      "url": "https://tiktok.com",
+      "order": 3,
+      "isVisible": true
+    },
+    {
+      "id": "s4",
+      "type": "spotify",
+      "label": "Spotify",
+      "url": "https://spotify.com",
+      "order": 4,
+      "isVisible": true
+    }
+  ],
+  "folderItems": [
+    {
+      "id": "fold-album",
+      "title": "最新專輯",
+      "description": "New Releases & Albums",
+      "type": "folder",
+      "tags": [
+        "mock-section"
+      ],
+      "childrenCount": 3
+    },
+    {
+      "id": "album-1",
+      "title": "ECLIPSE — 第三張正規專輯",
+      "description": "Title Track: Moonlight",
+      "type": "link",
+      "href": "https://example.com/album/eclipse",
+      "coverImage": "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&w=800&q=80",
+      "tags": [
+        "album"
+      ]
+    },
+    {
+      "id": "album-2",
+      "title": "NEON DREAM — Mini Album",
+      "type": "link",
+      "href": "https://example.com/album/neon-dream",
+      "coverImage": "https://images.unsplash.com/photo-1557672172-298e090bd0f1?auto=format&fit=crop&w=800&q=80",
+      "tags": [
+        "album"
+      ]
+    },
+    {
+      "id": "album-3",
+      "title": "PRISM — Digital Single",
+      "type": "link",
+      "href": "https://example.com/album/prism",
+      "coverImage": "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&w=800&q=80",
+      "tags": [
+        "album"
+      ]
+    },
+    {
+      "id": "fold-concert",
+      "title": "演唱會",
+      "description": "Concerts & Fan Meetings",
+      "type": "folder",
+      "tags": [
+        "mock-section"
+      ],
+      "childrenCount": 4
+    },
+    {
+      "id": "concert-1",
+      "title": "2025 World Tour — TOKYO",
+      "type": "link",
+      "href": "https://example.com/concert/tokyo",
+      "coverImage": "https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&w=800&q=80",
+      "tags": [
+        "concert"
+      ]
+    },
+    {
+      "id": "concert-2",
+      "title": "Taipei Arena Special",
+      "type": "link",
+      "href": "https://example.com/concert/taipei",
+      "coverImage": "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=800&q=80",
+      "tags": [
+        "concert"
+      ]
+    },
+    {
+      "id": "concert-3",
+      "title": "Fan Meeting — SEOUL",
+      "type": "link",
+      "href": "https://example.com/concert/fanmeet",
+      "coverImage": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=800&q=80",
+      "tags": [
+        "concert"
+      ]
+    },
+    {
+      "id": "concert-4",
+      "title": "Online Showcase",
+      "type": "link",
+      "href": "https://example.com/concert/online",
+      "coverImage": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80",
+      "tags": [
+        "concert"
+      ]
+    },
+    {
+      "id": "fold-behind",
+      "title": "幕後花絮",
+      "description": "Behind the Scenes",
+      "type": "folder",
+      "tags": [
+        "mock-section"
+      ],
+      "childrenCount": 3
+    },
+    {
+      "id": "bts-1",
+      "title": "MV 拍攝現場",
+      "type": "link",
+      "href": "https://example.com/bts/mv-shooting",
+      "coverImage": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80",
+      "tags": [
+        "behind"
+      ]
+    },
+    {
+      "id": "bts-2",
+      "title": "練習室日常",
+      "type": "link",
+      "href": "https://example.com/bts/practice",
+      "coverImage": "https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?auto=format&fit=crop&w=800&q=80",
+      "tags": [
+        "behind"
+      ]
+    },
+    {
+      "id": "bts-3",
+      "title": "造型企劃",
+      "type": "link",
+      "href": "https://example.com/bts/styling",
+      "coverImage": "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=800&q=80",
+      "tags": [
+        "behind"
+      ]
+    }
+  ],
+  "spaceLinks": [
+    {
+      "id": "sp1",
+      "name": "Virtual Concert Hall",
+      "href": "https://example.com/3d",
+      "previewImage": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=900&q=80",
+      "kind": "3d-space"
+    },
+    {
+      "id": "sp2",
+      "name": "Merch Store",
+      "href": "https://example.com/store",
+      "previewImage": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80",
+      "kind": "virtual-store"
+    }
+  ],
+  "settings": {
+    "layout": "stack",
+    "accentColor": "#7c3aed",
+    "backgroundColor": "#fafafa",
+    "showBio": true,
+    "cardRadius": 16,
+    "desktopLayout": {
+      "mode": "os",
+      "backgroundUrl": null,
+      "apps": [
+        {
+          "id": "basic",
+          "label": "基本",
+          "icon": "user",
+          "tab": "hero",
+          "contentKind": "tab",
+          "defaultOpen": true,
+          "windowAnchor": "top-left",
+          "windowSize": "medium"
+        },
+        {
+          "id": "intro",
+          "label": "介紹",
+          "icon": "phone",
+          "tab": "links",
+          "contentKind": "tab",
+          "defaultOpen": true,
+          "windowAnchor": "top-right",
+          "windowSize": "large"
+        },
+        {
+          "id": "shop",
+          "label": "商店",
+          "icon": "shopping-bag",
+          "tab": "shop",
+          "contentKind": "tab",
+          "defaultOpen": false,
+          "windowAnchor": "center",
+          "windowSize": "medium"
+        },
+        {
+          "id": "site",
+          "label": "官網",
+          "icon": "briefcase",
+          "contentKind": "embed",
+          "embedUrl": "https://example.com",
+          "defaultOpen": false,
+          "windowAnchor": "bottom-right",
+          "windowSize": "medium"
+        },
+        {
+          "id": "news",
+          "label": "公告",
+          "icon": "file-text",
+          "contentKind": "rich",
+          "richContent": "<h2>最新消息</h2><p>世界巡迴演唱會門票即將開賣！</p>",
+          "defaultOpen": false,
+          "windowAnchor": "bottom-left",
+          "windowSize": "small"
+        },
+        {
+          "id": "ig",
+          "label": "IG",
+          "icon": "heart",
+          "href": "https://instagram.com"
+        }
+      ]
+    }
+  }
+}
