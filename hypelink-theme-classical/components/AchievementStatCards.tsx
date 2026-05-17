@@ -21,7 +21,6 @@ function IconTree() {
     <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden>
       <circle cx="18" cy="18" r="18" fill="rgba(74,122,82,0.15)" />
       <path d="M18 28 L18 18" stroke="#4a7a52" strokeWidth="2.5" strokeLinecap="round"/>
-      <path d="M18 20 L10 28" stroke="#4a7a52" strokeWidth="1.5" strokeLinecap="round" opacity="0.5"/>
       <path d="M13 12 L18 4 L23 12 Z" fill="#4a7a52"/>
       <path d="M11 18 L18 9 L25 18 Z" fill="#6a9a5f"/>
       <path d="M9 23 L18 14 L27 23 Z" fill="#788a6b"/>
