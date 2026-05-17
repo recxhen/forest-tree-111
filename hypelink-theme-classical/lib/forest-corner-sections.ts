@@ -1,6 +1,6 @@
 /**
  * 舊版分頁標題白名單（向後相容 mock）。
- * 平台請改在分頁資料夾設 `metadata.forestCorner: true` 或 tag `forest-corner`。
+ * 優先使用 `metadata.forestCorner` / tag `forest-corner`，或依分頁順序（見 `folder-item-layout`）。
  */
 export const FOREST_CORNER_SECTION_TITLES = [
   '緊急募款',

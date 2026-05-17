@@ -17,14 +17,18 @@ export type LinkFolderSection = {
   forestCorner: boolean
 }
 
-function sectionFromHeader(item: FolderItem): LinkFolderSection {
+function sectionFromHeader(
+  item: FolderItem,
+  sectionIndex: number,
+  sectionItems: FolderItem[] = [],
+): LinkFolderSection {
   return {
     id: item.id,
     title: item.title,
     description: item.description,
-    items: [],
-    sectionLayout: resolveSectionLayout(item, item.title),
-    forestCorner: resolveForestCorner(item, item.title),
+    items: sectionItems,
+    sectionLayout: resolveSectionLayout(item, sectionIndex, sectionItems),
+    forestCorner: resolveForestCorner(item, sectionIndex),
   }
 }
 
@@ -72,7 +76,14 @@ export function parseLinkFolderSections(items: FolderItem[]): LinkFolderSection[
         sections.push(implicitSection('_implicit', '連結', leading))
         leading = []
       }
-      sections.push(sectionFromHeader(item))
+      sections.push({
+        id: item.id,
+        title: item.title,
+        description: item.description,
+        items: [],
+        sectionLayout: 'default',
+        forestCorner: false,
+      })
     } else {
       if (!sections.length) leading.push(item)
       else sections[sections.length - 1]!.items.push(item)
@@ -83,5 +94,13 @@ export function parseLinkFolderSections(items: FolderItem[]): LinkFolderSection[
     sections.unshift(implicitSection('_implicit', '連結', leading))
   }
 
-  return sections
+  let headerIndex = 0
+  return sections.map((sec) => {
+    if (sec.id === '_implicit' || sec.id === '_all') return sec
+    const header = items.find((i) => i.id === sec.id && isSectionHeader(i))
+    if (!header) return sec
+    const enriched = sectionFromHeader(header, headerIndex, sec.items)
+    headerIndex += 1
+    return enriched
+  })
 }
