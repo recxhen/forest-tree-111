@@ -102,7 +102,7 @@
       "title": "志工招募",
       "description": "用你的時間與雙手，成為改變的一部分",
       "type": "folder",
-      "tags": ["mock-section"],
+      "tags": ["mock-section", "forest-corner"],
       "childrenCount": 4
     },
     {
@@ -146,7 +146,7 @@
       "title": "現行專案",
       "description": "2024–2025 進行中的核心行動",
       "type": "folder",
-      "tags": ["mock-section"],
+      "tags": ["mock-section", "forest-corner"],
       "childrenCount": 4
     },
     {
