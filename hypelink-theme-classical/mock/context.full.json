@@ -187,7 +187,8 @@
       "type": "link",
       "href": "https://example.com/achievements/ocean-cleanup",
       "coverImage": "https://images.unsplash.com/photo-1526951521990-620dc14c214b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "tags": ["achievement"]
+      "tags": ["achievement"],
+      "metadata": { "statValue": 320, "statUnit": "噸", "statLabel": "清除海洋廢棄物", "statIcon": "wave" }
     },
     {
       "id": "ach-2",
@@ -196,7 +197,8 @@
       "type": "link",
       "href": "https://example.com/achievements/reforestation",
       "coverImage": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80",
-      "tags": ["achievement"]
+      "tags": ["achievement"],
+      "metadata": { "statValue": 180000, "statUnit": "棵", "statLabel": "種植原生樹木", "statIcon": "tree" }
     },
     {
       "id": "ach-3",
@@ -205,7 +207,8 @@
       "type": "link",
       "href": "https://example.com/achievements/policy",
       "coverImage": "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=800&q=80",
-      "tags": ["achievement"]
+      "tags": ["achievement"],
+      "metadata": { "statValue": 3, "statUnit": "項", "statLabel": "推動環保立法", "statIcon": "law" }
     },
     {
       "id": "ach-4",
@@ -214,7 +217,8 @@
       "type": "link",
       "href": "https://example.com/achievements/unep-award",
       "coverImage": "https://images.unsplash.com/photo-1567427018141-0584cfcbf1b8?auto=format&fit=crop&w=800&q=80",
-      "tags": ["achievement"]
+      "tags": ["achievement"],
+      "metadata": { "statValue": 1, "statUnit": "座", "statLabel": "國際環境大獎", "statIcon": "award" }
     },
     {
       "id": "fold-news",
@@ -250,41 +254,6 @@
       "href": "https://example.com/news/annual-report-2024",
       "coverImage": "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=800&q=80",
       "tags": ["news"]
-    },
-    {
-      "id": "fold-education",
-      "title": "環境教育資源",
-      "description": "免費教材、工作坊與線上課程",
-      "type": "folder",
-      "tags": ["mock-section"],
-      "childrenCount": 3
-    },
-    {
-      "id": "edu-1",
-      "title": "氣候變遷入門課程（免費）",
-      "description": "6 堂線上課程，從科學原理到在地行動，適合國高中生與一般民眾，附結業證書。",
-      "type": "link",
-      "href": "https://example.com/education/climate-course",
-      "coverImage": "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=800&q=80",
-      "tags": ["education"]
-    },
-    {
-      "id": "edu-2",
-      "title": "學校生態課教案下載",
-      "description": "針對國小至高中各年齡層設計的 40+ 套教案，涵蓋海洋、森林、濕地、氣候等主題，免費授權使用。",
-      "type": "link",
-      "href": "https://example.com/education/lesson-plans",
-      "coverImage": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80",
-      "tags": ["education"]
-    },
-    {
-      "id": "edu-3",
-      "title": "企業 ESG 工作坊",
-      "description": "為企業量身設計的半日 ESG 實作工作坊，幫助團隊從日常作業落實減碳行動，歡迎洽詢。",
-      "type": "link",
-      "href": "https://example.com/education/esg-workshop",
-      "coverImage": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80",
-      "tags": ["education"]
     }
   ],
   "spaceLinks": [

@@ -6,6 +6,7 @@ import { isForestCornerSection } from '../lib/forest-corner-sections'
 import { parseLinkFolderSections } from '../lib/link-folder-sections'
 import type { ThemeFolderTabsSettings } from '../settings.schema'
 import type { FolderItem } from '../types'
+import AchievementStatCards from './AchievementStatCards'
 import CornerForest from './CornerForest'
 
 const FUNDRAISING_TITLES = ['珊瑚礁緊急募款', '珊瑚礁復育緊急募款', '山林復育行動基金', '海洋廢棄物行動計劃', '海洋廢棄物清除計畫']
@@ -132,7 +133,19 @@ export default function FolderGrid({
         </div>
       </div>
 
+      {/* 成就分頁：統計卡片佈局 */}
+      {active.title === '我們的成就' ? (
+        <div className="mx-auto w-full max-w-5xl px-4 pb-2 pt-4 lg:px-10 lg:pt-6">
+          <AchievementStatCards
+            items={active.items.filter((i) => i.type !== 'page-module')}
+            radiusCls={radiusCls}
+            spaceGap={spaceGap}
+          />
+        </div>
+      ) : null}
+
       {/* 統一 grid：模組與連結混合排列 */}
+      {active.title !== '我們的成就' ? (
       <div
         className="mx-auto w-full max-w-5xl px-4 pb-2 pt-4 lg:px-10 lg:pt-6"
       >
@@ -227,6 +240,7 @@ export default function FolderGrid({
           })}
         </div>
       </div>
+      ) : null}
       </div>
     </>
   )
